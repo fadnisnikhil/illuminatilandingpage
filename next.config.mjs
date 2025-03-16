@@ -8,6 +8,20 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['images.unsplash.com', 'placehold.co'],
+    formats: ['image/webp'],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
+  },
+  experimental: {
+    serverActions: true,
+  },
+  output: 'standalone',
+};
 
 export default nextConfig;

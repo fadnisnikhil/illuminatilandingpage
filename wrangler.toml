@@ -1,12 +1,18 @@
-name = "cloudflare-saas-stack"
-compatibility_date = "2024-09-03"
-compatibility_flags = [ "nodejs_compat" ]
+name = "illuminati-website"
+compatibility_date = "2024-09-04"
+
+# Cloudflare Pages configuration
 pages_build_output_dir = ".vercel/output/static"
+
+compatibility_flags = [ "nodejs_compat" ]
 
 [placement]
 mode = "smart"
 
 [[d1_databases]]
 binding = "DATABASE"
-database_name = "cloudflare-saas-stack-db"
-database_id = "294b2613-5f3c-40e5-b32b-bbe664bd9696"
+database_name = "illuminatilandingpage-db"
+database_id = "a75c9fab-9615-4afb-bd72-17caec2f9f1b"
+migrations_dir = "./drizzle"
+
+
