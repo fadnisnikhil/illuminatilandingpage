@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="180" viewBox="0 0 120 180">
+  <!-- Illuminati Berry Energy Drink Can -->
+  
+  <!-- Can Body -->
+  <rect x="30" y="30" width="60" height="120" rx="5" ry="5" fill="#ff3366" />
+  
+  <!-- Top of the can (lid) -->
+  <ellipse cx="60" cy="30" rx="30" ry="10" fill="#ddd" />
+  <ellipse cx="60" cy="30" rx="25" ry="8" fill="#ccc" />
+  <ellipse cx="60" cy="30" rx="20" ry="6" fill="#ff3366" />
+  
+  <!-- Bottom of the can -->
+  <ellipse cx="60" cy="150" rx="30" ry="10" fill="#cc2952" />
+  
+  <!-- Label/text area -->
+  <rect x="35" y="55" width="50" height="70" rx="2" ry="2" fill="#fff" />
+  
+  <!-- ILLUMINATI text -->
+  <text x="60" y="90" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#ff3366">ILLUMINATI</text>
+  
+  <!-- Berry text -->
+  <text x="60" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#ff3366">BERRY</text>
+  
+  <!-- Energy drink text -->
+  <text x="60" y="120" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#555">ENERGY DRINK</text>
+  
+  <!-- Illuminati eye symbol -->
+  <path d="M60 75 L45 65 L75 65 Z" fill="#ff3366" />
+  <circle cx="60" cy="70" r="5" fill="#fff" />
+  <circle cx="60" cy="70" r="2" fill="#ff3366" />
+  
+  <!-- Berry graphics -->
+  <circle cx="42" cy="128" r="3" fill="#ff1a4d" />
+  <circle cx="48" cy="125" r="3" fill="#ff1a4d" />
+  <circle cx="44" cy="122" r="3" fill="#ff1a4d" />
+  
+  <!-- Highlights/reflection -->
+  <path d="M40 40 L45 45 L45 130 L40 135" fill="#ff6699" fill-opacity="0.3" />
+</svg> 

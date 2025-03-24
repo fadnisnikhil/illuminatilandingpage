@@ -10,17 +10,14 @@ if (process.env.NODE_ENV === 'development') {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true, // Disable image optimization for better compatibility
     domains: ['images.unsplash.com', 'placehold.co'],
     formats: ['image/webp'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    loader: 'custom',
-    loaderFile: './imageLoader.js',
   },
-  experimental: {
-    serverActions: true,
-  },
+  // Server Actions are available by default in Next.js 14+
   output: 'standalone',
 };
 

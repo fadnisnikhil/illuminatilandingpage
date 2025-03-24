@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="180" viewBox="0 0 120 180">
+  <!-- Illuminati Zero Energy Drink Can -->
+  
+  <!-- Can Body -->
+  <rect x="30" y="30" width="60" height="120" rx="5" ry="5" fill="#00bfff" />
+  
+  <!-- Top of the can (lid) -->
+  <ellipse cx="60" cy="30" rx="30" ry="10" fill="#ddd" />
+  <ellipse cx="60" cy="30" rx="25" ry="8" fill="#ccc" />
+  <ellipse cx="60" cy="30" rx="20" ry="6" fill="#00bfff" />
+  
+  <!-- Bottom of the can -->
+  <ellipse cx="60" cy="150" rx="30" ry="10" fill="#0099cc" />
+  
+  <!-- Label/text area -->
+  <rect x="35" y="55" width="50" height="70" rx="2" ry="2" fill="#fff" />
+  
+  <!-- ILLUMINATI text -->
+  <text x="60" y="90" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#00bfff">ILLUMINATI</text>
+  
+  <!-- Zero text -->
+  <text x="60" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#00bfff">ZERO</text>
+  
+  <!-- Energy drink text -->
+  <text x="60" y="120" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="#555">ENERGY DRINK</text>
+  
+  <!-- Illuminati eye symbol -->
+  <path d="M60 75 L45 65 L75 65 Z" fill="#00bfff" />
+  <circle cx="60" cy="70" r="5" fill="#fff" />
+  <circle cx="60" cy="70" r="2" fill="#00bfff" />
+  
+  <!-- Zero sugar badge -->
+  <circle cx="75" cy="130" r="10" fill="#005580" />
+  <text x="75" y="132" font-family="Arial, sans-serif" font-size="6" font-weight="bold" text-anchor="middle" fill="#fff">ZERO</text>
+  <text x="75" y="138" font-family="Arial, sans-serif" font-size="4" text-anchor="middle" fill="#fff">SUGAR</text>
+  
+  <!-- Highlights/reflection -->
+  <path d="M40 40 L45 45 L45 130 L40 135" fill="#66e0ff" fill-opacity="0.3" />
+</svg> 

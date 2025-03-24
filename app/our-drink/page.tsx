@@ -5,79 +5,74 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../../components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../components/ui/tabs';
-import { ShoppingCart, Plus, Minus } from 'lucide-react';
+import { Plus, Minus, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-// Products data
+// Products data updated with content from 3plaintext.txt
 const PRODUCTS = [
   {
     id: 'original',
-    name: 'Original',
-    tagline: 'The Ultimate Energy Experience',
-    description: 'Our flagship formula combines natural caffeine, nootropics, and B-vitamins for peak mental and physical performance.',
+    name: 'Original Classic',
+    tagline: 'Original Classic Illuminati Formula',
+    description: 'The Original Classic Illuminati Formula is a carefully crafted blend of ingredients designed to boost both energy and mental clarity. Featuring a powerful combination of caffeine, taurine, and essential vitamins, it provides a long-lasting burst of energy without the dreaded crash. The formula enhances focus, helping you stay sharp and productive throughout the day with unique taste formulation.',
+    longDescription: 'This classic version has been perfected over time to ensure a smooth, refreshing taste with every sip. Whether you\'re working, studying, or on the move, it delivers the focus you need to power through your tasks. With its unique mix, the Classic Formula is a go-to choice for those who need to maintain peak performance in high-pressure situations. The energy boost is consistent, allowing you to stay focused and energized for hours.',
     caffeine: '150mg',
     calories: '120',
     image: '/products/original.jpg',
     benefits: [
-      'Enhanced Mental Clarity',
-      'Sustained Physical Energy',
-      'Improved Reaction Time',
-      'No Crash Formula'
+      'Enhanced Focus and Mental Clarity',
+      'Sustained Energy Without Crash',
+      'Smooth, Refreshing Taste',
+      'Perfect for Work, Study, or Sports'
     ],
-    flavors: ['Classic', 'Citrus', 'Blue Lightning']
+    flavors: ['Classic', 'Citrus', 'Blue Lightning'],
+    color: 'bg-emerald-500',
+    textColor: 'text-emerald-500'
+  },
+  {
+    id: 'berry-blast',
+    name: 'Berry Wildberry Blast',
+    tagline: 'Bursting with Flavor and Energy',
+    description: 'Berry Wildberry Blast offers a refreshing twist with its bold, fruity flavor that\'s both delicious and energizing. This unique blend of wildberries provides a burst of natural sweetness, making every sip a flavorful experience. Packed with caffeine, taurine, and essential B-vitamins, it\'s designed to keep you sharp and focused throughout your day.',
+    longDescription: 'The Berry Wildberry Blast formula is perfect for those who crave a fruity energy drink without compromising on performance. Whether you\'re hitting the gym, working on a project, or just need a boost, this energy drink delivers. Its smooth, vibrant taste makes it a great option for anyone looking for a new way to fuel their focus and energy levels. With no artificial aftertaste, it keeps you refreshed and energized without the crash.',
+    caffeine: '150mg',
+    calories: '130',
+    image: '/products/berry-blast.jpg',
+    benefits: [
+      'Vibrant Berry Flavor',
+      'Natural Sweetness',
+      'No Artificial Aftertaste',
+      'Perfect for Anyone On The Go'
+    ],
+    flavors: ['Mixed Berry', 'Strawberry', 'Blueberry Acai'],
+    color: 'bg-pink-600',
+    textColor: 'text-pink-600'
   },
   {
     id: 'zero-sugar',
     name: 'Zero Sugar',
     tagline: 'All the Energy, None of the Sugar',
-    description: 'Experience the full cognitive and energy benefits of Illuminati Energy without the sugar or calories.',
+    description: 'Illuminati Energy Drinks Zero Sugar offers the perfect solution for those who want the energy boost without the added calories. With zero sugar, it provides all the focus-enhancing benefits of the original formula, but without the guilt. Packed with caffeine, taurine, and B-vitamins, this version ensures sustained energy and mental clarity throughout the day.',
+    longDescription: 'The refreshing taste is smooth and crisp, making it an ideal choice for anyone who loves energy drinks but prefers to avoid sugar. Despite having no sugar, it still delivers a powerful boost to keep you sharp and productive. Perfect for fitness enthusiasts, busy professionals, or anyone on the go, Illuminati Zero Sugar provides the performance you need without compromising your health goals. Whether you are powering through a workout or a busy day at work, this energy drink fuels your focus without the crash.',
     caffeine: '150mg',
     calories: '10',
     image: '/products/zero-sugar.jpg',
     benefits: [
       'Zero Sugar Formula',
       'Full Energy Complex',
-      'Enhanced Mental Focus',
-      'Keto-Friendly'
+      'Crisp, Refreshing Taste',
+      'Perfect for Fitness Enthusiasts'
     ],
-    flavors: ['Original', 'Berry', 'Tropical']
-  },
-  {
-    id: 'berry-blast',
-    name: 'Berry Blast',
-    tagline: 'Bursting with Flavor and Energy',
-    description: 'A vibrant mix of berry flavors combined with our signature energy formula for a refreshing boost.',
-    caffeine: '150mg',
-    calories: '130',
-    image: '/products/berry-blast.jpg',
-    benefits: [
-      'Robust Berry Flavor',
-      'Antioxidant Enhanced',
-      'Vitamin B Complex',
-      'Mental Clarity Boost'
-    ],
-    flavors: ['Mixed Berry', 'Strawberry', 'Blueberry Acai']
-  },
-  {
-    id: 'tropical-surge',
-    name: 'Tropical Surge',
-    tagline: 'Exotic Flavor Meets Power',
-    description: 'Transport yourself to a tropical paradise while enjoying elite mental and physical performance.',
-    caffeine: '150mg',
-    calories: '125',
-    image: '/products/tropical-surge.jpg',
-    benefits: [
-      'Tropical Fruit Blend',
-      'Electrolyte Enhanced',
-      'Cognitive Performance',
-      'Refreshing Energy Boost'
-    ],
-    flavors: ['Pineapple Coconut', 'Mango', 'Passion Fruit']
+    flavors: ['Original', 'Berry', 'Tropical'],
+    color: 'bg-blue-500',
+    textColor: 'text-blue-500'
   }
 ];
 
 export default function OurDrinkPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [compareList, setCompareList] = useState<string[]>([]);
+  const [highlightedProduct, setHighlightedProduct] = useState<string | null>(null);
 
   const toggleCompare = (id: string) => {
     if (compareList.includes(id)) {
@@ -99,7 +94,7 @@ export default function OurDrinkPage() {
   return (
     <div className="pt-24">
       {/* Hero Section */}
-      <section className="relative h-[40vh] w-full">
+      <section className="relative h-[50vh] w-full">
         <Image
           src="/products/hero-products.jpg"
           alt="Illuminati Energy Drinks"
@@ -157,9 +152,18 @@ export default function OurDrinkPage() {
             )}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="bg-black rounded-lg overflow-hidden">
+              <motion.div 
+                key={product.id} 
+                className={`bg-black rounded-lg overflow-hidden border-2 ${highlightedProduct === product.id ? 'border-' + product.color.split('-')[1] + '-500' : 'border-transparent'}`}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+                onMouseEnter={() => setHighlightedProduct(product.id)}
+                onMouseLeave={() => setHighlightedProduct(null)}
+              >
                 <div className="relative h-64">
                   <Image
                     src={product.image}
@@ -167,11 +171,12 @@ export default function OurDrinkPage() {
                     fill
                     className="object-cover"
                   />
+                  <div className={`absolute top-0 left-0 w-full h-1 ${product.color}`}></div>
                   <button
                     onClick={() => toggleCompare(product.id)}
                     className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center ${
                       compareList.includes(product.id) 
-                        ? 'bg-emerald-500 text-white' 
+                        ? product.color + ' text-white' 
                         : 'bg-white/20 text-white hover:bg-white/30'
                     }`}
                   >
@@ -180,9 +185,11 @@ export default function OurDrinkPage() {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">Illuminati {product.name}</h3>
-                  <p className="text-emerald-500 font-medium mb-4">{product.tagline}</p>
-                  <p className="text-gray-400 mb-4">{product.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    <span className={product.textColor}>Illuminati</span> {product.name}
+                  </h3>
+                  <p className={`${product.textColor} font-medium mb-4`}>{product.tagline}</p>
+                  <p className="text-gray-400 mb-4 line-clamp-3">{product.description}</p>
                   
                   <div className="flex gap-6 mb-6">
                     <div>
@@ -195,20 +202,15 @@ export default function OurDrinkPage() {
                     </div>
                   </div>
                   
-                  <div className="flex justify-between mt-6">
-                    <Button asChild variant="outline" className="border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black">
-                      <Link href="/stores">
-                        <ShoppingCart size={16} className="mr-2" /> Buy Now
-                      </Link>
-                    </Button>
-                    <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                      <Link href={`/our-drink/${product.id}`}>
-                        View Details
+                  <div className="flex justify-center mt-6">
+                    <Button asChild className={`${product.color} hover:opacity-90 text-white`}>
+                      <Link href={`/our-drink/${product.id}`} className="flex items-center">
+                        View Details <ArrowRight size={16} className="ml-2" />
                       </Link>
                     </Button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -249,73 +251,76 @@ export default function OurDrinkPage() {
               <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Image src="/icons/nutrition.svg" alt="Vitamins" width={24} height={24} />
               </div>
-              <h3 className="text-white font-bold mb-3">B-Vitamin Complex</h3>
+              <h3 className="text-white font-bold mb-3">B-Vitamins</h3>
               <p className="text-gray-400">
-                Essential vitamins that support energy metabolism and neural function.
+                Essential vitamins B3, B6, B12 that support energy metabolism and brain function.
               </p>
             </div>
             
             <div className="bg-gray-900 p-6 rounded-lg">
               <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image src="/icons/quality.svg" alt="Electrolytes" width={24} height={24} />
+                <Image src="/icons/leaf.svg" alt="Natural" width={24} height={24} />
               </div>
-              <h3 className="text-white font-bold mb-3">Electrolyte Blend</h3>
+              <h3 className="text-white font-bold mb-3">Natural Flavors</h3>
               <p className="text-gray-400">
-                Supports hydration and optimal neurological function during intense activity.
+                Real fruit extracts and natural flavors for a clean, authentic taste experience.
               </p>
             </div>
           </div>
           
-          <div className="mt-12">
-            <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              <Link href="/innovation">
-                Learn More About Our Science
-              </Link>
-            </Button>
+          <div className="mt-16 bg-gray-900 p-8 rounded-lg max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-6">Ingredients</h3>
+            <p className="text-gray-300 text-lg text-left">
+              Carbonated Water, Sugar, Energy Premix [ Taurine (400mg/100ml), Maltodextrin, Caffeine (30 mg/100ml), Vitamins (B3, B6, B2 and B12), Acidity Regulator (INS 330, INS 331 (11) ], Natural and Nature Identical Flavoring Substances, Permitted Natural Colour (INS 150 a), Antioxidant (INS 300), Stabiliser (INS 440) and Preservative (INS 211)
+            </p>
           </div>
         </div>
       </section>
       
-      {/* FAQ */}
+      {/* Quality Section */}
       <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Frequently Asked <span className="text-emerald-500">Questions</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Premium <span className="text-emerald-500">Quality</span>
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Illuminati Energy Drink is crafted with the highest quality ingredients, ensuring a premium experience with every sip. Each can is packed with carefully selected components like caffeine, taurine, and B-vitamins, designed to enhance your focus and energy.
+              </p>
+              <p className="text-gray-300 mb-6">
+                The brand focuses on delivering consistent performance, giving you long-lasting energy without the crash. The quality of Illuminati Energy Drink extends beyond its ingredients—its smooth, refreshing taste ensures a satisfying experience every time.
+              </p>
+              <p className="text-gray-300">
+                It&apos;s produced with strict quality control measures to guarantee that every can meets the brand&apos;s high standards. Illuminati Energy Drink is trusted by those who demand both performance and flavor, offering a superior option in the energy drink market.
+              </p>
+            </div>
+            <div className="relative h-[400px]">
+              <Image
+                src="/about/quality.jpg"
+                alt="Illuminati Quality"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ link */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Have <span className="text-emerald-500">Questions?</span>
           </h2>
-          
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                q: 'How much caffeine is in Illuminati Energy drinks?',
-                a: 'Most of our products contain 150mg of natural caffeine, which is approximately equivalent to a 12oz cup of coffee. Our focus is on sustained energy release rather than high caffeine content.'
-              },
-              {
-                q: 'Are Illuminati Energy drinks vegan?',
-                a: 'Yes, all Illuminati Energy drinks are vegan-friendly. We do not use any animal-derived ingredients in our formulations.'
-              },
-              {
-                q: 'How should I consume Illuminati Energy for best results?',
-                a: 'For optimal performance, we recommend drinking Illuminati Energy chilled, 15-30 minutes before you need heightened focus or energy. Limit consumption to 1-2 cans per day.'
-              },
-              {
-                q: 'Where can I purchase Illuminati Energy drinks?',
-                a: 'Illuminati Energy is available at select retailers nationwide and through our online store. Use our Store Locator to find the nearest location or order directly for home delivery.'
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-black p-6 rounded-lg">
-                <h3 className="text-white font-bold text-lg mb-2">{faq.q}</h3>
-                <p className="text-gray-400">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-black">
-              <Link href="/faq">
-                View All FAQs
-              </Link>
-            </Button>
-          </div>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Find answers to common questions about our energy drinks, ingredients, and more.
+          </p>
+          <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">
+            <Link href="/faq">
+              View FAQ
+            </Link>
+          </Button>
         </div>
       </section>
     </div>

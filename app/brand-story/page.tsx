@@ -273,6 +273,61 @@ export default function BrandStoryPage() {
           </div>
         </div>
       </section>
+      
+      {/* Community Section - Added from 3plaintext.txt */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Our <span className="text-emerald-500">Community</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-2 gap-4">
+              {[1, 2, 3, 4].map((i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={`/brand-story/community-${i}.jpg`}
+                    alt={`Illuminati Community ${i}`}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+            
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Illuminati Energy Drinks has built a strong, vibrant community of individuals who are passionate about performance, focus, and staying energized. Whether you're an athlete and busy professional, Illuminati brings people together with its shared mission to fuel success. The brand actively engages with its community through social media, events, and promotions, creating a sense of belonging.
+                </p>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Fans of Illuminati energy drinks often share their experiences, tips, and success stories, forming a supportive network that motivates one another. The community embraces those who are driven and focused, reflecting the brand's values of peak performance.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Illuminati energy drinks encourages users to push their limits and reach new heights, fostering a culture of achievement and positivity. By connecting with others who share similar goals, it's more than just an energy drink—it's a lifestyle. Whether online or in person, Illuminati energy drinks community remains dedicated to helping each other stay sharp and successful.
+                </p>
+                <div className="mt-8">
+                  <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                    Join Our Community
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 } 

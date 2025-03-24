@@ -79,8 +79,8 @@ export default function StoresPage() {
   
   const [selectedStore, setSelectedStore] = useState<null | typeof STORE_DATA[0]>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [storeType, setStoreType] = useState('');
-  const [product, setProduct] = useState('');
+  const [storeType, setStoreType] = useState('all');
+  const [product, setProduct] = useState('all');
   const [filteredStores, setFilteredStores] = useState(STORE_DATA);
   
   // Filter stores based on search query and filters
@@ -95,11 +95,11 @@ export default function StoresPage() {
       );
     }
     
-    if (storeType) {
+    if (storeType && storeType !== 'all') {
       results = results.filter(store => store.type === storeType);
     }
     
-    if (product) {
+    if (product && product !== 'all') {
       results = results.filter(store => store.products.includes(product));
     }
     
@@ -161,7 +161,7 @@ export default function StoresPage() {
                     <SelectValue placeholder="Store Type" />
                   </SelectTrigger>
                   <SelectContent className="bg-gray-800 border-gray-700 text-white">
-                    <SelectItem value="">All Store Types</SelectItem>
+                    <SelectItem value="all">All Store Types</SelectItem>
                     <SelectItem value="Grocery">Grocery</SelectItem>
                     <SelectItem value="Convenience">Convenience</SelectItem>
                     <SelectItem value="Fitness">Fitness</SelectItem>
@@ -174,7 +174,7 @@ export default function StoresPage() {
                     <SelectValue placeholder="Product" />
                   </SelectTrigger>
                   <SelectContent className="bg-gray-800 border-gray-700 text-white">
-                    <SelectItem value="">All Products</SelectItem>
+                    <SelectItem value="all">All Products</SelectItem>
                     <SelectItem value="Original">Original</SelectItem>
                     <SelectItem value="Zero Sugar">Zero Sugar</SelectItem>
                     <SelectItem value="Berry Blast">Berry Blast</SelectItem>

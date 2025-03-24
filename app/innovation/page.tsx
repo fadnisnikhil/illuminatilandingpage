@@ -312,6 +312,69 @@ export default function InnovationPage() {
           </Button>
         </div>
       </section>
+      
+      {/* Quality Section - Added from 3plaintext.txt */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Uncompromising <span className="text-emerald-500">Quality</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Illuminati Energy Drink is crafted with the highest quality ingredients, ensuring a premium experience with every sip. Each can is packed with carefully selected components like caffeine, taurine, and B-vitamins, designed to enhance your focus and energy. The brand focuses on delivering consistent performance, giving you long-lasting energy without the crash.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                The quality of Illuminati Energy Drink extends beyond its ingredients—its smooth, refreshing taste ensures a satisfying experience every time. It's produced with strict quality control measures to guarantee that every can meets the brand's high standards.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Illuminati Energy Drink is trusted by those who demand both performance and flavor, offering a superior option in the energy drink market. Whether you're working, studying, or training, you can rely on its premium formula to keep you sharp and energized.
+              </p>
+            </div>
+            <div className="relative h-80 rounded-lg overflow-hidden">
+              <Image
+                src="/innovation/quality-control.jpg"
+                alt="Quality Control at Illuminati"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Innovation Beyond Ingredients - Added from 3plaintext.txt */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Innovation <span className="text-emerald-500">Beyond Ingredients</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 bg-gray-900 rounded-lg">
+              <h3 className="text-xl font-bold text-emerald-500 mb-4">Advanced Formulations</h3>
+              <p className="text-gray-300">
+                Illuminati Energy Drinks is at the forefront of innovation in the energy drink industry, constantly evolving to meet the needs of its customers. The brand combines cutting-edge ingredients with advanced formulations to deliver superior focus, energy, and performance. By using caffeine and taurine, along with essential vitamins, Illuminati energy drinks ensures a balanced energy boost without the unwanted crash.
+              </p>
+            </div>
+            
+            <div className="p-8 bg-gray-900 rounded-lg">
+              <h3 className="text-xl font-bold text-emerald-500 mb-4">Creative Flavors</h3>
+              <p className="text-gray-300">
+                Innovation goes beyond just the ingredients; the brand is known for its creative and bold flavors that set it apart from other energy drinks. Whether it's the classic formula or exciting new variations like Illuminati Classical, Illuminati Supreme Berry Wildberry Blast or Zero Sugar, Illuminati energy drinks consistently pushes the boundaries of taste and function.
+              </p>
+            </div>
+            
+            <div className="p-8 bg-gray-900 rounded-lg">
+              <h3 className="text-xl font-bold text-emerald-500 mb-4">Sustainability Focus</h3>
+              <p className="text-gray-300">
+                The brand also embraces sustainability, exploring eco-friendly packaging options and responsible sourcing. Illuminati energy drinks commitment to research and development means they are always one step ahead in creating energy drinks that cater to evolving customer needs. With a focus on both quality and innovation, Illuminati energy drinks remains a leader in the energy drink market.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 } 

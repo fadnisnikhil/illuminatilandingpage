@@ -3,9 +3,17 @@
 import { Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export function ShareProduct() {
+interface ShareProductProps {
+  productId?: string;
+}
+
+export function ShareProduct({ productId }: ShareProductProps) {
   const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
+    const shareUrl = productId 
+      ? `${window.location.origin}/our-drink/${productId}`
+      : window.location.href;
+      
+    navigator.clipboard.writeText(shareUrl);
     alert('Link copied to clipboard!');
   };
   

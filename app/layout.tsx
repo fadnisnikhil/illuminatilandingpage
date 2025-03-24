@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
+import './components/custom.css';
 import AgeVerification from '../components/age-verification';
 import Navigation from '../components/navigation';
-import Footer from '../components/footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const montserrat = Montserrat({ 
@@ -29,7 +29,6 @@ export default function RootLayout({
         <AgeVerification />
         <Navigation />
         <main className="min-h-screen">{children}</main>
-        <Footer />
       </body>
     </html>
   );

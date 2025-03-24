@@ -9,10 +9,5 @@ compatibility_flags = [ "nodejs_compat" ]
 [placement]
 mode = "smart"
 
-[[d1_databases]]
-binding = "DATABASE"
-database_name = "illuminatilandingpage-db"
-database_id = "a75c9fab-9615-4afb-bd72-17caec2f9f1b"
-migrations_dir = "./drizzle"
 
 

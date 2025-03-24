@@ -1,0 +1,534 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 593,
+      "max": [
+        0.9935951828956604,
+        0.9935951828956604,
+        0.9769625663757324
+      ],
+      "min": [
+        -0.9935951828956604,
+        -0.9935951828956604,
+        0.33118805289268494
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7116,
+      "componentType": 5126,
+      "count": 593,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 593,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3456,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 14232,
+      "componentType": 5126,
+      "count": 9846,
+      "max": [
+        0.13226376473903656,
+        0.21561884880065918,
+        0.021250400692224503
+      ],
+      "min": [
+        -0.13226376473903656,
+        -0.21445320546627045,
+        0.0022754757665097713
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 132384,
+      "componentType": 5126,
+      "count": 9846,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 4744,
+      "componentType": 5126,
+      "count": 9846,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 13824,
+      "componentType": 5125,
+      "count": 57408,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 250536,
+      "componentType": 5126,
+      "count": 13121,
+      "max": [
+        0.6031991243362427,
+        0.6031990647315979,
+        1.553225040435791
+      ],
+      "min": [
+        -0.6031991243362427,
+        -0.6031991243362427,
+        -0.8714718818664551
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 407988,
+      "componentType": 5126,
+      "count": 13121,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 83512,
+      "componentType": 5126,
+      "count": 13121,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 243456,
+      "componentType": 5125,
+      "count": 76224,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 565440,
+      "componentType": 5126,
+      "count": 5024,
+      "max": [
+        0.6045193076133728,
+        0.6045194268226624,
+        1.5022133588790894
+      ],
+      "min": [
+        -0.6045193076133728,
+        -0.6045193076133728,
+        -0.7884323596954346
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 625728,
+      "componentType": 5126,
+      "count": 5024,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 188480,
+      "componentType": 5126,
+      "count": 5024,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 548352,
+      "componentType": 5125,
+      "count": 27648,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "generator": "fab-model-conversion",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 658944,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 228672,
+      "byteOffset": 658944,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 686016,
+      "byteOffset": 887616,
+      "byteStride": 12,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1573632,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/Logotipo_baseColor.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0.9920030232473088
+        }
+      },
+      "name": "Aluminio",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6358071275813759,
+          0.6358071275813759,
+          0.6358071275813759,
+          1.0
+        ],
+        "roughnessFactor": 0.0750448001365338
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Logotipo",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "roughnessFactor": 0.16647365020541016
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "C��rculo.002_Aluminio_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "C��rculo.001_Aluminio_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "C��rculo_Aluminio_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "C��rculo_Logotipo_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "0718291a7bf5443393c3b1d7f38d2f80.fbx"
+    },
+    {
+      "children": [
+        3,
+        6,
+        8,
+        10,
+        12
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        -29.086477364379697,
+        -5.518905590722295,
+        -95.51711910171437,
+        0.0,
+        56.63932069164076,
+        79.46722539115298,
+        -21.839126361216156,
+        0.0,
+        77.11007920637729,
+        -60.452475336912016,
+        -19.988344364310564,
+        0.0,
+        407.6245422363281,
+        590.38623046875,
+        -100.54539489746094,
+        1.0
+      ],
+      "name": "Light"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Object_4"
+    },
+    {
+      "name": "Object_5"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        -65.1558127516791,
+        -44.52713915455176,
+        -61.417049289096546,
+        0.0,
+        -32.401349332924404,
+        89.53957282709818,
+        -30.5420854760369,
+        0.0,
+        68.59207001076241,
+        8.666908837178815e-06,
+        -72.76761921184274,
+        0.0,
+        735.88916015625,
+        495.8309326171875,
+        692.5791015625,
+        1.0
+      ],
+      "name": "Camera"
+    },
+    {
+      "name": "Object_7"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        3.5517241954803467,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -5.786493189400639e-07,
+        -3.5517241954802996,
+        0.0,
+        0.0,
+        3.5517241954802996,
+        -5.786493189400639e-07,
+        0.0,
+        5.587935447692871e-07,
+        110.47348022460938,
+        1.8491997718811035,
+        1.0
+      ],
+      "name": "C��rculo.002"
+    },
+    {
+      "mesh": 0,
+      "name": "C��rculo.002_Aluminio_0"
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.0,
+        110.20634460449219,
+        -5.841948986053467,
+        1.0
+      ],
+      "name": "C��rculo.001"
+    },
+    {
+      "mesh": 1,
+      "name": "C��rculo.001_Aluminio_0"
+    },
+    {
+      "children": [
+        13,
+        14
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.0,
+        -40.36921691894531,
+        0.0,
+        1.0
+      ],
+      "name": "C��rculo"
+    },
+    {
+      "mesh": 2,
+      "name": "C��rculo_Aluminio_0"
+    },
+    {
+      "mesh": 3,
+      "name": "C��rculo_Logotipo_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}
