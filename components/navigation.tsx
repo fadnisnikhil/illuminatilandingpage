@@ -9,13 +9,10 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Our Drink', href: '/our-drink' },
-  { name: 'Lifestyle', href: '/lifestyle' },
-  { name: 'Brand Story', href: '/brand-story' },
-  { name: 'Innovation', href: '/innovation' },
-  { name: 'Store Locator', href: '/stores' },
-  { name: 'Blogs', href: '/blogs' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Flavors', href: '#flavors' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Contact Us', href: '#contact' },
 ];
 
 export default function Navigation() {

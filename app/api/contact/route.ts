@@ -1,36 +1,54 @@
-import { NextResponse } from 'next/server';
-import { submitContactForm } from '../../../lib/db';
+import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-export const runtime = 'edge';
-
-type ContactFormData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  phone?: string;
-};
-
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const data = await request.json() as ContactFormData;
-    
-    // Basic validation
-    if (!data.name || !data.email || !data.subject || !data.message) {
+    const { firstName, lastName, email, message } = await request.json();
+
+    // Validate required fields
+    if (!firstName || !lastName || !email || !message) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'All fields are required' },
         { status: 400 }
       );
     }
-    
-    // Submit the form data to the database
-    await submitContactForm(process.env, data);
-    
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error submitting contact form:', error);
+
+    // Create transporter
+    const transporter = nodemailer.createTransporter({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER, // Your Gmail address
+        pass: process.env.EMAIL_PASS, // Your Gmail app password
+      },
+    });
+
+    // Email content
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'nikhil.fadnis29@gmail.com',
+      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+        <hr>
+        <p><em>This email was sent from the Illuminati Energy contact form.</em></p>
+      `,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+
     return NextResponse.json(
-      { error: 'Failed to submit contact form' },
+      { message: 'Email sent successfully' },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Email sending error:', error);
+    return NextResponse.json(
+      { error: 'Failed to send email' },
       { status: 500 }
     );
   }
